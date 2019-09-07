@@ -1,12 +1,10 @@
-from instruments_import import read_excel_input
-from calculation_tasks import perform_tasks
-from excel_writing import write_data_to_excel
+import random
 
 
 def main():
-    instruments = read_excel_input()
-    perform_tasks(instruments)
-    write_data_to_excel(instruments)
+    for x in range(10):
+        print
+        random.randint(1, 101)
 
 
 try:
@@ -15,3 +13,4 @@ try:
 # handled in a nice way for the sake of simplicity.
 except ValueError as error:
     print('Caught this error: ' + repr(error))
+
