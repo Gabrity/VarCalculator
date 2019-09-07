@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FirstPythonProject.iml" filepath="$PROJECT_DIR$/.idea/FirstPythonProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/VarCalculator.iml" filepath="$PROJECT_DIR$/.idea/VarCalculator.iml" />
     </modules>
   </component>
 </project>
