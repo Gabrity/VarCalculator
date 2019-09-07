@@ -1,9 +1,13 @@
-import random
+from random_variables import create_distribution
+from histogram_creator import create_histogram
 
 
 def main():
-    for x in range(10):
-        print(random.randint(1, 101))
+    sample_size = 10**5
+    print('Generating random distribution')
+    sample_vector = create_distribution(sample_size)
+    print('Creating histogram of random sample')
+    create_histogram(sample_vector)
 
 
 try:
