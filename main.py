@@ -1,4 +1,4 @@
-from random_variables import create_distribution, estimate_cumulative_distribution, estimate_var
+from random_variables import create_distribution, estimate_cumulative_distribution, estimate_var, calculate_nth_moment
 from histogram_creator import create_histogram
 
 
@@ -14,6 +14,10 @@ def main():
     print('Calculating VaR at 5%')
     var = estimate_var(sample_vector, sample_size, 0.05)
     print('VaR of Z at 5% is', var)
+    print('Calculating normalized moments of Z')
+    for n in range(3, 11):
+        moment = calculate_nth_moment(sample_vector, sample_size, n)
+        print('n =', n, 'moment of variable Z is ', moment)
 
 
 try:

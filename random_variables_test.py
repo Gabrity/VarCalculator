@@ -1,8 +1,24 @@
 from unittest import TestCase
-from random_variables import get_discrete_distribution, get_standard_normal_distribution
+from random_variables import get_discrete_distribution, get_standard_normal_distribution, calculate_nth_moment
 
 
 class TestRandomVariables(TestCase):
+
+    def test_calculate_nth_moment(self):
+        self.calculate_with_given_moment(2, 1.6666666666666667)
+        self.calculate_with_given_moment(3, -2.3333333333333335)
+        self.calculate_with_given_moment(4, 5.666666666666667)
+
+    def calculate_with_given_moment(self, moment, expected_result):
+        # arrange
+        sample = [1, -2, 0]
+        sample_size = 3
+
+        # act
+        result = calculate_nth_moment(sample, sample_size, moment)
+
+        # assert
+        self.assertEqual(result, expected_result)
 
     def test_discrete_random_distribution_empirical_distribution(self):
         # arrange
@@ -12,7 +28,7 @@ class TestRandomVariables(TestCase):
         type_fail = False
 
         # act
-        sample = 1000000
+        sample = 2000000
         for x in range(sample):
             result = get_discrete_distribution()
             if result == 0:

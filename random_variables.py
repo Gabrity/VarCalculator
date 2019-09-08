@@ -1,15 +1,23 @@
 import random
 import numpy as np
+import math
+
+
+def calculate_nth_moment(sample, sample_size, moment):
+    sum = 0
+    for x in sample:
+        sum = sum + x ** moment
+    return sum / sample_size
 
 
 def estimate_var(sample, sample_size, threshold):
-    index_at = get_index(sample_size, threshold)
+    index_at = get_var_level_index(sample_size, threshold)
     sample.sort()
     return sample[index_at]
 
 
-def get_index(sample_size, threshold):
-    return int(sample_size * threshold)
+def get_var_level_index(sample_size, threshold):
+    return int(math.floor(sample_size * threshold))
 
 
 def estimate_cumulative_distribution(sample, sample_size, threshold):
