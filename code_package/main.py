@@ -6,7 +6,7 @@ from code_package.histogram_creator import create_histogram
 
 def director():
     """Director method for Task 1"""
-    sample_size = 10**5
+    sample_size = 10**7
     print('Generating random distribution with a sample of:', sample_size)
     sample_vector = create_distribution(sample_size)
     print('Creating histogram of random sample')
