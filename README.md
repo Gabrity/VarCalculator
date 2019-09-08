@@ -1,1 +1,0 @@
-Gabrity's first python project
