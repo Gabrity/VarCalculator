@@ -2,6 +2,24 @@ import random
 import numpy as np
 
 
+def estimate_var(sample, sample_size, threshold):
+    index_at = get_index(sample_size, threshold)
+    sample.sort()
+    return sample[index_at]
+
+
+def get_index(sample_size, threshold):
+    return int(sample_size * threshold)
+
+
+def estimate_cumulative_distribution(sample, sample_size, threshold):
+    count = 0
+    for x in sample:
+        if x <= threshold:
+            count = count + 1
+    return count / sample_size
+
+
 def create_distribution(sample_size):
     result = []
     for x in range(sample_size):
